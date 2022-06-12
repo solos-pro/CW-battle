@@ -21,6 +21,11 @@ result = {
     "armors": eq.armor_names  # для названия брони
 }
 
+# def render_choose_personage_template(**kwargs) -> str:
+#     return render_template(
+#         'hero_choosing.html',
+#         result=result
+#     )
 
 @app.route('/')
 def index():
