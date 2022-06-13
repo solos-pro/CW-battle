@@ -58,11 +58,11 @@ class Hero(ABC):
             self.hp = 0
 
     def regenerate_stamina(self):
-        delta_stamina = BASE_STAMINA_PER_ROUND * self.class_.stamina
-        if self.stamina + delta_stamina <= self.class_.max_stamina:
-            self.stamina += delta_stamina
-        else:
+        delta_stamina = round(BASE_STAMINA_PER_ROUND * self.class_.stamina, 1)
+        if self.stamina + delta_stamina > self.class_.max_stamina:
             self.stamina = self.class_.max_stamina
+        else:
+            self.stamina += delta_stamina
 
     def use_skill(self) -> Optional[float]:
         if not self.skill_used and self.stamina - self.class_.skill.stamina:

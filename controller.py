@@ -69,12 +69,12 @@ class Game(metaclass=SingletonMeta):
         dealt_damage: Optional[float] = self.player.hit(self.enemy)
         if dealt_damage is not None:
             self.enemy.take_hit(dealt_damage)
-            return f'<p>You deals enemy {dealt_damage} damage</p><p>{self.next_turn()}</p>'
-        return f'<p>Not enough stamina to hit</p><p>{self.next_turn()}</p>'
+            return f'You deals enemy {dealt_damage} damage{self.next_turn()}'
+        return f' Not enough stamina to hit {self.next_turn()}'
 
     def player_use_skill(self) -> str:
         dealt_damage: Optional[float] = self.player.use_skill()
         if dealt_damage is not None:
             self.enemy.take_hit(dealt_damage)
-            return f'<p>You deals enemy {dealt_damage} damage</p><p>{self.next_turn()}</p>'
-        return f'<p>Not enough stamina to use skill</p><p>{self.next_turn()}</p>'
+            return f'You deals enemy {dealt_damage} damage{self.next_turn()}'
+        return f' Not enough stamina to use skill{self.next_turn()}'
