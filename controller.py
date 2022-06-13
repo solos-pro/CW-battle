@@ -40,10 +40,10 @@ class Game(metaclass=SingletonMeta):
         self.game_results = results
         return results
 
-    def next_turn(self, results) -> str:
-        if results:
-            self._check_hp()
-            # return results
+    def next_turn(self) -> str:
+        if self._check_hp():
+            results = self._check_hp()
+            return results
 
         if not self.game_processing:
             return self.game_results
