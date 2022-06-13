@@ -10,7 +10,7 @@ BASE_STAMINA_PER_ROUND = 0.4
 
 
 class Hero(ABC):
-    def __init__(self, class_: Type[Personage], weapon: Weapon, armor: Armor, name: str):
+    def __init__(self, class_: Type[Personage], weapon: Weapon, armor: Armor, name: str) -> object:
         self.class_ = class_
         self.weapon = weapon
         self.armor = armor
