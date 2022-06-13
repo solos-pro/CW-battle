@@ -49,7 +49,7 @@ def game_processing(func):
 
 @app.route('/')
 def index():
-    return render_template('index.html')  # /game/templates/
+    return render_template('index.html')
 
 
 @app.route('/choose-hero', methods=['GET', 'POST'])
