@@ -4,10 +4,10 @@ from typing import Dict, Type
 from flask import Flask, render_template, request, url_for
 from werkzeug.utils import redirect
 
-from controller import Game
+from game.controller import Game
 from game.equipment import EquipmentData
 from game.hero import Player, Hero, Enemy
-from game.personages import personage_classes, Personage
+from game.personages import personage_classes
 from game.utils import load_equipment
 import os
 
